@@ -1,0 +1,97 @@
+{
+  "name": "pert4",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "pert4-mgmt",
+        "bridge": "br-3f12574d5e45",
+        "ipv4-subnet": "10.10.10.0/24",
+        "ipv4-gw": "10.10.10.1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCbx1irOyxnKEFM8Nx+crynYdhPS3RjzYQriyV+II+X4pzO1L4zh5HhFdGMkBviaDf85Jt4aSLV12vNuECJihMEiMcIPUpRxXBhv3vPmgH7vz274uTugRiyYYPsKYfd3FMoJkrEpmCT3piInt+YlguE9PUSuSxDAQVFomGUq9ty/LINd0Y82/jdJ2eHwX58BfX/sikpuzOHT+/UEUHxQQ7dUxG4evqg1RvIJYdjDW/yGwjcauLAYChW7m9GkPvSscklQZGnA52hN7L7jGxICZEhfk+KqfVLeN/SWkVV7IvmsT0wf8KdHfgph10tGmYtnTipNvzl98yl0p0N5IamOT73WvymulvSqo66h4Qoxm7i09Y1vONskckVXmZ12kH2ZM5ca+4p/p9Dj/tHeSFt5MXF1XnRliWvC1S1HnEdaSL4AnzxQ/J0gCQz6Yv6OLo53oKIst1sfH7iDHAMSCtELZd1WGoq6TeXB3ClYCRdGj3r8Ne7A9dpucno7rjwqLk0/R0="],
+  "nodes": {
+    "pc1": {
+      "index": "0",
+      "shortname": "pc1",
+      "longname": "clab-pert4-pc1",
+      "fqdn": "pc1.pert4.io",
+      "group": "",
+      "labdir": "/root/Djarkomlanjut/pert4/clab-pert4/pc1",
+      "kind": "linux",
+      "image": "alpine",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.10.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-3f12574d5e45",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/Djarkomlanjut/pert4/clab-pert4/pc1",
+        "clab-node-longname": "clab-pert4-pc1",
+        "clab-node-name": "pc1",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/root/Djarkomlanjut/pert4/sample.yml",
+        "containerlab": "pert4"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r1": {
+      "index": "1",
+      "shortname": "r1",
+      "longname": "clab-pert4-r1",
+      "fqdn": "r1.pert4.io",
+      "group": "",
+      "labdir": "/root/Djarkomlanjut/pert4/clab-pert4/r1",
+      "kind": "linux",
+      "image": "frrouting/frr",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "10.10.10.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-3f12574d5e45",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/root/Djarkomlanjut/pert4/clab-pert4/r1",
+        "clab-node-longname": "clab-pert4-r1",
+        "clab-node-name": "r1",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/root/Djarkomlanjut/pert4/sample.yml",
+        "containerlab": "pert4"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "r1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d8:9f:60",
+        "peer": "z"
+      },
+      "z": {
+        "node": "pc1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:44:ee:62",
+        "peer": "a"
+      }
+    }
+  ]
+}

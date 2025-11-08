@@ -1,0 +1,17 @@
+
+name: pert4
+mgmt:
+  network: pert4-mgmt
+  ipv4-subnet: 10.10.10.0/24
+topology:
+  nodes:
+    r1:
+      kind: linux
+      image: frrouting/frr
+
+    pc1:
+      kind: linux
+      image: alpine
+
+  links:
+    - endpoints: ["r1:eth1", "pc1:eth1"]

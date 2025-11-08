@@ -1,0 +1,11 @@
+---
+pc1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 10.10.10.2
+r1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 10.10.10.3
